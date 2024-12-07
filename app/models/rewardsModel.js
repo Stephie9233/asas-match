@@ -1,22 +1,27 @@
 import { DataTypes, Model } from "sequelize";
 import { sequelize } from "./sequelize-client.js";
 
-export class Experiences extends Model {}
+export class Rewards extends Model {}
 
-Experiences.init(
+Rewards.init(
   {
     season_begin: {
       type: DataTypes.TEXT,
       allowNull: false,
     },
 
-    club: {
+    championship: {
+      type: DataTypes.TEXT,
+      allowNull: false,
+    },
+
+    reward: {
       type: DataTypes.TEXT,
       allowNull: false,
     },
   },
   {
     sequelize,
-    tableName: "experiences",
+    tableName: "rewards",
   }
 );

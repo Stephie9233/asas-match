@@ -12,6 +12,6 @@ Club.init(
   },
   {
     sequelize,
-    tableName: "club",
+    tableName: "clubs",
   }
 );
