@@ -39,7 +39,7 @@ CREATE TABLE "details" (
 DROP TABLE IF EXISTS "experiences";
 CREATE TABLE "experiences" (
    "id_xp" SERIAL PRIMARY KEY,
-   "season" INT NOT NULL,
+   "season_begin" INT NOT NULL,
    "club" VARCHAR(100) NOT NULL,
    "details_id" INT NOT NULL,
    "created_ad" DATE NOT NULL, 
