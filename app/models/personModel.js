@@ -6,23 +6,23 @@ export class Person extends Model {}
 Person.init(
   {
     rule: {
-      type: DataTypes.TEXT,
+      type: DataTypes.VARCHAR(50),
       allowNull: false,
     },
     shirt: {
-      type: DataTypes.INT,
+      type: DataTypes.INTEGER,
       allowNull: true,
     },
     poste: {
-      type: DataTypes.INT,
+      type: DataTypes.INTEGER,
       allowNull: false,
     },
     lastname: {
-      type: DataTypes.TEXT,
+      type: DataTypes.VARCHAR(100),
       allowNull: false,
     },
     firstname: {
-      type: DataTypes.TEXT,
+      type: DataTypes.VARCHAR(100),
       allowNull: false,
     },
   },

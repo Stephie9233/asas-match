@@ -3,7 +3,7 @@ BEGIN;
 DROP TABLE IF EXISTS "club";
 CREATE TABLE "club" (
    "id_club" SERIAL PRIMARY KEY,
-   "name" VARCHAR(50) NOT NULL, 
+   "club_name" VARCHAR(50) NOT NULL, 
    "created_ad" DATE NOT NULL, 
    "updated_at" DATE,
 );
@@ -26,9 +26,9 @@ CREATE TABLE "person" (
 DROP TABLE IF EXISTS "details";
 CREATE TABLE "details" (
    "id_details" SERIAL PRIMARY KEY,
-   "heigth" INT NOT NULL,
-   "birthdate" DATE NOT NULL,
-   "description" TEXT NOT NULL,
+   "heigth" INT,
+   "birthdate" DATE,
+   "description" TEXT,
    "person_id" INT NOT NULL,
    "created_ad" DATE NOT NULL, 
    "updated_at" DATE,
