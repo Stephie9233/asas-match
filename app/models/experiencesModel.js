@@ -1,9 +1,9 @@
 import { DataTypes, Model } from "sequelize";
 import { sequelize } from "./sequelize-client.js";
 
-export class Experiences extends Model {}
+export class Experience extends Model {}
 
-Experiences.init(
+Experience.init(
   {
     season_begin: {
       type: DataTypes.TEXT,

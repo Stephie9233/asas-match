@@ -1,9 +1,9 @@
 import { DataTypes, Model } from "sequelize";
 import { sequelize } from "./sequelize-client.js";
 
-export class Championships extends Model {}
+export class match extends Model {}
 
-Championships.init(
+match.init(
   {
     meeting: {
       type: DataTypes.TEXT,
@@ -17,6 +17,6 @@ Championships.init(
   },
   {
     sequelize,
-    tableName: "championships",
+    tableName: "matchs",
   }
 );

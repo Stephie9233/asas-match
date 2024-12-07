@@ -67,8 +67,8 @@ CREATE TABLE "persons_has_rewards" (
    "updated_at" TIMESTAMPTZ
 )
 
-DROP TABLE IF EXISTS "championships";
-CREATE TABLE "championships" (
+DROP TABLE IF EXISTS "matchs";
+CREATE TABLE "matchs" (
    "id_championship" INT PRIMARY KEY,
    "meeting" DATE NOT NULL,
    "club_id" INT NOT NULL,
