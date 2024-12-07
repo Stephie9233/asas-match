@@ -20,7 +20,7 @@ CREATE TABLE "persons" (
    "created_at" TIMESTAMPTZ NOT NULL DEFAULT CURRENT_TIMESTAMP,
    "updated_at" TIMESTAMPTZ
    
-   FOREIGN KEY("club_id") REFERENCES "club"("id_club")
+   FOREIGN KEY("club_id") REFERENCES "clubs"("id_club")
 );
 
 DROP TABLE IF EXISTS "details";
@@ -59,7 +59,7 @@ CREATE TABLE "rewards" (
 );
 
 DROP TABLE IF EXISTS "persons_has_rewards";
-CREATE TABLE "person_has_rewards" (
+CREATE TABLE "persons_has_rewards" (
    "id" INT PRIMARY KEY,
    "id_person" INT NOT NULL REFERENCES "persons"("id_person") ON DELETE CASCADE,
    "id_reward" INT NOT NULL REFERENCES "rewards"("id_reward") ON DELETE CASCADE,
@@ -67,12 +67,12 @@ CREATE TABLE "person_has_rewards" (
    "updated_at" TIMESTAMPTZ
 )
 
-DROP TABLE IF EXISTS "championship";
-CREATE TABLE "championship" (
+DROP TABLE IF EXISTS "championships";
+CREATE TABLE "championships" (
    "id_championship" INT PRIMARY KEY,
-   "meeting" DATE,
+   "meeting" DATE NOT NULL,
    "club_id" INT NOT NULL,
-   "description" TEXT NOT NULL,   
+   "description" TEXT,   
    "created_at" TIMESTAMPTZ NOT NULL DEFAULT CURRENT_TIMESTAMP,
    "updated_at" TIMESTAMPTZ
 
