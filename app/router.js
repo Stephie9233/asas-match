@@ -11,4 +11,4 @@ export const router = Router();
 
 
 // --- Routes / ---
-router.get("/", mainController.renderHomePage);
+router.get("/", mainController.renderHome);

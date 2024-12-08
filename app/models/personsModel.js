@@ -1,9 +1,9 @@
 import { DataTypes, Model } from "sequelize";
 import { sequelize } from "./sequelize-client.js";
 
-export class Persons extends Model {}
+export class Person extends Model {}
 
-Persons.init(
+Person.init(
   {
     rule: {
       type: DataTypes.VARCHAR(50),
