@@ -1,7 +1,7 @@
 BEGIN;
 
 DROP TABLE IF EXISTS "clubs";
-CREATE TABLE "club" (
+CREATE TABLE "clubs" (
    "id_club" INT PRIMARY KEY,
    "club_name" VARCHAR(50) NOT NULL, 
    "created_at" TIMESTAMPTZ NOT NULL DEFAULT CURRENT_TIMESTAMP,
@@ -18,7 +18,7 @@ CREATE TABLE "persons" (
    "firstname" VARCHAR(50) NOT NULL,
    "club_id" INT NOT NULL,
    "created_at" TIMESTAMPTZ NOT NULL DEFAULT CURRENT_TIMESTAMP,
-   "updated_at" TIMESTAMPTZ
+   "updated_at" TIMESTAMPTZ,
    
    FOREIGN KEY("club_id") REFERENCES "clubs"("id_club")
 );
@@ -31,7 +31,7 @@ CREATE TABLE "details" (
    "description" TEXT,
    "person_id" INT NOT NULL,
    "created_at" TIMESTAMPTZ NOT NULL DEFAULT CURRENT_TIMESTAMP,
-   "updated_at" TIMESTAMPTZ
+   "updated_at" TIMESTAMPTZ,
 
    FOREIGN KEY("person_id") REFERENCES "persons"("id_person")
 );
@@ -43,7 +43,7 @@ CREATE TABLE "experiences" (
    "club" VARCHAR(100) NOT NULL,
    "details_id" INT NOT NULL, 
    "created_at" TIMESTAMPTZ NOT NULL DEFAULT CURRENT_TIMESTAMP,
-   "updated_at" TIMESTAMPTZ
+   "updated_at" TIMESTAMPTZ,
 
    FOREIGN KEY("details_id") REFERENCES "details"("id_details")
 );
@@ -65,7 +65,7 @@ CREATE TABLE "persons_has_rewards" (
    "id_reward" INT NOT NULL REFERENCES "rewards"("id_reward") ON DELETE CASCADE,
    "created_at" TIMESTAMPTZ NOT NULL DEFAULT CURRENT_TIMESTAMP,
    "updated_at" TIMESTAMPTZ
-)
+);
 
 DROP TABLE IF EXISTS "matchs";
 CREATE TABLE "matchs" (
@@ -74,7 +74,7 @@ CREATE TABLE "matchs" (
    "club_id" INT NOT NULL,
    "description" TEXT,   
    "created_at" TIMESTAMPTZ NOT NULL DEFAULT CURRENT_TIMESTAMP,
-   "updated_at" TIMESTAMPTZ
+   "updated_at" TIMESTAMPTZ,
 
    FOREIGN KEY("club_id") REFERENCES "clubs"("id_club")
 );

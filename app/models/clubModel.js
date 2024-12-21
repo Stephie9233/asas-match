@@ -15,3 +15,5 @@ Club.init(
     tableName: "clubs",
   }
 );
+
+

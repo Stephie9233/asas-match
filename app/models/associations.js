@@ -5,20 +5,20 @@ import { Experience } from "./experiencesModel.js";
 import { Rewards } from "./rewardsModel.js";
 
 //One to Many
-//1 club => has N persons
+// 1 club => has N persons
 // N persons => belongs to 1 club
 
 Club.hasMany(Person);
 Person.belongsTo(Club);
 
 //One to One
-//1 person => has one details
+// 1 person => has one details
 // 1 details => belongs to 1 person
 Person.hasOne(Details);
 Details.belongsTo(Person);
 
 //One to many
-//1 Details => has many experiences
+// 1 Details => has many experiences
 // Many Experiences => belongs to 1 Details
 Details.hasMany(Experience);
 Experience.belongsTo(Details);
@@ -35,3 +35,4 @@ Person.hasMany(Rewards, {
 });
 
 
+export { Club, Person, Details, Experience, Rewards };

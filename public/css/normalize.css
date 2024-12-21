@@ -1,0 +1,52 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-size: 62.5%;    
+}
+
+@font-face {
+    font-family: "Asap";
+    src: url(../fonts/Asap.ttf);
+}
+
+@font-face {
+    font-family: "Bangers";
+    src: url(../fonts/Bangers.ttf);
+}
+
+@font-face {
+    font-family: "Oswald";
+    src: url(../fonts/Oswald.ttf);
+}
+
+:root {
+    --subtitle : "Oswald";
+    --text: "Asap";
+    --title: "Bangers"; 
+
+    --green : #027317;
+    --white : #f1f1f1;
+}
+
+.body__header {
+    width: 100vw;
+    height: 20vh;
+    background-color: var(--green);
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.body__header--img {
+    width: 50%;
+    height: 70%;
+    border-radius: 15px;
+}
+
+.body__header--container {
+    width: 45%;
+}
