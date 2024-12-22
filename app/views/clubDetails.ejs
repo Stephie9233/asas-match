@@ -1,0 +1,148 @@
+<%- include('partial/header') %>
+
+<main class="body__main">
+    <h2 class="body__main--title"><%= club.club_name %></h2>
+    <h3 class="body__main--title-add">Ajouter un membre <span class="body__main--title-add-icon">+</span></h3>
+    <form action="/club/<%= club.id %>/membre/ajouter" method="post" class="body__main--form">     
+        <article class="body__main--form-section">
+            <div class="body__main--form-section-subSection">    
+                <label for="rule" class="body__main--form-section-subSection-label">Rôle :</label>
+                <select type="text" name="rule" id="rule">
+                    <option value="">Rôle</option>
+                    <option value="player">Joueuse</option>
+                    <option value="coach">Entraineur</option>
+                    <option value="helper">Assistant</option>
+                    <option value="pdg">Président</option>
+                </select>
+            </div>
+            <div class="body__main--form-section-subSection">
+                <label for="shirt" class="body__main--form-section-subSection-label">Maillot :</label>
+                <input type="number" name="shirt" id="shirt" class="body__main--form-section-subSection-input">
+            </div>
+        </article>
+        <article class="body__main--form-section">
+            <div class="body__main--form-section-subSection">
+                <label for="firstname" class="body__main--form-section-subSection-label">Prénom :</label>
+                <input type="text" name="firstname" id="firstname" class="body__main--form-section-subSection-input">
+            </div>            
+            <div class="body__main--form-section-subSection">
+                <label for="lastname" class="body__main--form-section-subSection-label">Nom :</label>
+                <input type="text" name="lastname" id="lastname" class="body__main--form-section-subSection-input">
+            </div>
+        </article>
+        <article class="body__main--form-section">
+            <div class="body__main--form-section-subSection">
+                <label for="poste" class="body__main--form-section-subSection-label">Poste :</label>
+                <input type="text" name="poste" id="poste" class="body__main--form-section-subSection-input">
+            </div>
+            <button type="submit" class="body__main--form-section-subSection-btn">Ajouter</button>
+        </article>        
+    </form>
+    <section class="body__main--section">
+        <h3 class="body__main--section-title">Joueuses</h3>
+        <% if (players.length === 0) { %>
+            <p class="body__main--section-info">Il n'y a pas de joueuse enregistrée pour le moment</p>
+        <% } else if(players.length > 0) { %>
+            <table class="body__main--section-table">
+                <thead class="body__main--section-table-head">
+                    <td class="body__main--section-table-head-column" id="num">N°</td>
+                    <td class="body__main--section-table-head-column">Prénom</td>
+                    <td class="body__main--section-table-head-column">Nom</td>
+                    <td class="body__main--section-table-head-column-icon">
+                        <img src="/img/read.png" alt="icone livre" class="body__main--section-table-head-column-icon-img">
+                    </td>
+                    <td class="body__main--section-table-head-column-icon">
+                        <img src="/img/stylo.png" alt="icone stylo" class="body__main--section-table-head-column-icon-img">
+                    </td>
+                    <td class="body__main--section-table-head-column-icon">
+                        <img src="/img/poubelle.png" alt="icone poubelle" class="body__main--section-table-head-column-icon-img">
+                    </td>
+                </thead>
+                <tbody class="body__main--section-table-body">
+                    <% for(const player of players) { %>
+                        <tr class="body__main--section-table-body-row">
+                            <td class="body__main--section-table-body-row-column">
+                                <%= player.shirt %>
+                            </td>
+                            <td class="body__main--section-table-body-row-column">
+                                <%= player.firstname %>
+                            </td>
+                            <td class="body__main--section-table-body-row-column">
+                                <%= player.lastname %>
+                            </td>
+                            <td class="body__main--section-table-row-icon">
+                                <img src="/img/read.png" alt="icone lire" class="body__main--section-table-body-column-icon-img">
+                            </td>
+                            <td class="body__main--section-table-row-icon">
+                                <img src="/img/stylo.png" alt="icone stylo" class="body__main--section-table-body-column-icon-img">
+                            </td>
+                            <td class="body__main--section-table-row-icon">
+                                <img src="/img/poubelle.png" alt="icone poubelle" class="body__main--section-table-body-column-icon-img">
+                            </td>
+                        </tr>
+                    <% } %>                
+                </tbody>
+            </table>
+        <% } %>
+    </section>
+    <section class="body__main--section">
+        <h3 class="body__main--section-title">Staff</h3>
+        <% if (staff.length === 0) { %>
+            <p class="body__main--section-info">Il n'y a pas de personnel enregistré pour le moment</p>
+        <% } else { %>
+        <table class="body__main--section-table">
+            <thead class="body__main--section-table-head">
+                <td class="body__main--section-table-head-column">Rôle</td>
+                <td class="body__main--section-table-head-column">Prénom</td>
+                <td class="body__main--section-table-head-column">Nom</td>
+                <td class="body__main--section-table-head-column-icon">
+                    <img src="/img/read.png" alt="icone livre" class="body__main--section-table-head-column-icon-img">
+                </td>
+                <td class="body__main--section-table-head-column-icon">
+                    <img src="/img/stylo.png" alt="icone stylo" class="body__main--section-table-head-column-icon-img">
+                </td>
+                <td class="body__main--section-table-head-column-icon">
+                    <img src="/img/poubelle.png" alt="icone poubelle" class="body__main--section-table-head-column-icon-img">
+                </td>
+            </thead>
+            <tbody class="body__main--section-table-body">
+                <% for(const employee of staff) {%>
+                    <tr class="body__main--section-table-body-row">
+                        <td class="body__main--section-table-body-row-column">
+                            <%= employee.rule %>
+                        </td>
+                        <td class="body__main--section-table-body-row-column">
+                            <%= employee.firstname %>
+                        </td>
+                        <td class="body__main--section-table-body-row-column">
+                            <%= employee.lastname %>
+                        </td>
+                        <td class="body__main--section-table-row-icon">
+                            <a href="">
+                                <img src="/img/read.png" alt="icone lire" class="body__main--section-table-body-column-icon-img">
+                            </a>
+                        </td>
+                        <td class="body__main--section-table-row-icon">
+                            <a href="">
+                                <img src="/img/stylo.png" alt="icone stylo" class="body__main--section-table-body-column-icon-img">
+                            </a>
+                        </td>
+                        <td class="body__main--section-table-row-icon">
+                            <a href="">
+                                <img src="/img/poubelle.png" alt="icone poubelle" class="body__main--section-table-body-column-icon-img">
+                            </a>
+                        </td>
+                    </tr>
+                <% } %>
+                
+            </tbody>
+        </table>
+        <% } %>
+    </section>
+</main>
+
+
+<footer class="body__footer"></footer>
+<script src="/js/club.js"></script>
+</body>
+</html>

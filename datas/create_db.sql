@@ -2,81 +2,83 @@ BEGIN;
 
 DROP TABLE IF EXISTS "clubs";
 CREATE TABLE "clubs" (
-   "id_club" INT PRIMARY KEY,
-   "club_name" VARCHAR(50) NOT NULL, 
+   "id" SERIAL PRIMARY KEY,
+   "club_name" VARCHAR(50) NOT NULL UNIQUE, 
    "created_at" TIMESTAMPTZ NOT NULL DEFAULT CURRENT_TIMESTAMP,
-   "updated_at" TIMESTAMPTZ
+   "updated_at" TIMESTAMPTZ DEFAULT CURRENT_TIMESTAMP
 );
 
 DROP TABLE IF EXISTS "persons";
 CREATE TABLE "persons" (
-   "id_person" INT PRIMARY KEY,
+   "id" SERIAL PRIMARY KEY,
    "rule" VARCHAR(50) NOT NULL,
-   "shirt" INT,
-   "poste" INT NOT NULL,
-   "name" VARCHAR(50) NOT NULL,
+   "shirt" VARCHAR,
+   "poste" VARCHAR NOT NULL,
+   "lastname" VARCHAR(50) NOT NULL,
    "firstname" VARCHAR(50) NOT NULL,
    "club_id" INT NOT NULL,
    "created_at" TIMESTAMPTZ NOT NULL DEFAULT CURRENT_TIMESTAMP,
-   "updated_at" TIMESTAMPTZ,
-   
-   FOREIGN KEY("club_id") REFERENCES "clubs"("id_club")
+   "updated_at" TIMESTAMPTZ DEFAULT CURRENT_TIMESTAMP,
+
+   FOREIGN KEY ("club_id") REFERENCES "clubs"("id") ON DELETE CASCADE
 );
 
 DROP TABLE IF EXISTS "details";
 CREATE TABLE "details" (
-   "id_details" INT PRIMARY KEY,
-   "heigth" INT,
+   "id" SERIAL PRIMARY KEY,
+   "heigth" INT CHECK ("heigth" > 0),
    "birthdate" DATE,
    "description" TEXT,
    "person_id" INT NOT NULL,
    "created_at" TIMESTAMPTZ NOT NULL DEFAULT CURRENT_TIMESTAMP,
-   "updated_at" TIMESTAMPTZ,
+   "updated_at" TIMESTAMPTZ DEFAULT CURRENT_TIMESTAMP,
 
-   FOREIGN KEY("person_id") REFERENCES "persons"("id_person")
+   FOREIGN KEY ("person_id") REFERENCES "persons"("id") ON DELETE CASCADE
 );
 
 DROP TABLE IF EXISTS "experiences";
 CREATE TABLE "experiences" (
-   "id_experiences" INT PRIMARY KEY,
-   "season_begin" INT NOT NULL,
+   "id" SERIAL PRIMARY KEY,
+   "season_begin" INT NOT NULL CHECK ("season_begin" >= 1900 AND "season_begin" <= EXTRACT(YEAR FROM CURRENT_DATE)),
    "club" VARCHAR(100) NOT NULL,
    "details_id" INT NOT NULL, 
    "created_at" TIMESTAMPTZ NOT NULL DEFAULT CURRENT_TIMESTAMP,
-   "updated_at" TIMESTAMPTZ,
+   "updated_at" TIMESTAMPTZ DEFAULT CURRENT_TIMESTAMP,
 
-   FOREIGN KEY("details_id") REFERENCES "details"("id_details")
+   FOREIGN KEY ("details_id") REFERENCES "details"("id") ON DELETE CASCADE
 );
 
 DROP TABLE IF EXISTS "rewards";
 CREATE TABLE "rewards" (
-   "id_reward" INT PRIMARY KEY,
-   "season_begin" INT NOT NULL,
-   "championship" VARCHAR NOT NULL,
+   "id" SERIAL PRIMARY KEY,
+   "season_begin" INT NOT NULL CHECK ("season_begin" >= 1900 AND "season_begin" <= EXTRACT(YEAR FROM CURRENT_DATE)),
+   "championship" VARCHAR(100) NOT NULL,
    "reward" VARCHAR(100) NOT NULL,
    "created_at" TIMESTAMPTZ NOT NULL DEFAULT CURRENT_TIMESTAMP,
-   "updated_at" TIMESTAMPTZ
+   "updated_at" TIMESTAMPTZ DEFAULT CURRENT_TIMESTAMP
 );
 
 DROP TABLE IF EXISTS "persons_has_rewards";
 CREATE TABLE "persons_has_rewards" (
-   "id" INT PRIMARY KEY,
-   "id_person" INT NOT NULL REFERENCES "persons"("id_person") ON DELETE CASCADE,
-   "id_reward" INT NOT NULL REFERENCES "rewards"("id_reward") ON DELETE CASCADE,
+   "id" SERIAL PRIMARY KEY,
+   "person_id" INT NOT NULL REFERENCES "persons"("id") ON DELETE CASCADE,
+   "reward_id" INT NOT NULL REFERENCES "rewards"("id") ON DELETE CASCADE,
    "created_at" TIMESTAMPTZ NOT NULL DEFAULT CURRENT_TIMESTAMP,
-   "updated_at" TIMESTAMPTZ
+   "updated_at" TIMESTAMPTZ DEFAULT CURRENT_TIMESTAMP
 );
 
 DROP TABLE IF EXISTS "matchs";
 CREATE TABLE "matchs" (
-   "id_championship" INT PRIMARY KEY,
+   "id" SERIAL PRIMARY KEY,
    "meeting" DATE NOT NULL,
    "club_id" INT NOT NULL,
    "description" TEXT,   
    "created_at" TIMESTAMPTZ NOT NULL DEFAULT CURRENT_TIMESTAMP,
-   "updated_at" TIMESTAMPTZ,
+   "updated_at" TIMESTAMPTZ DEFAULT CURRENT_TIMESTAMP,
 
-   FOREIGN KEY("club_id") REFERENCES "clubs"("id_club")
+   FOREIGN KEY ("club_id") REFERENCES "clubs"("id") ON DELETE CASCADE
 );
+
+
 
 COMMIT;

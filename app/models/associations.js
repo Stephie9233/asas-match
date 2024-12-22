@@ -8,8 +8,8 @@ import { Rewards } from "./rewardsModel.js";
 // 1 club => has N persons
 // N persons => belongs to 1 club
 
-Club.hasMany(Person);
-Person.belongsTo(Club);
+Club.hasMany(Person, {foreignKey: "club_id"});
+Person.belongsTo(Club, {foreignKey: "club_id"});
 
 //One to One
 // 1 person => has one details
@@ -28,10 +28,10 @@ Experience.belongsTo(Details);
 // Many Rewards => belongs to many Persons
 
 Rewards.belongsToMany(Person, {
-  throught: "persons_has_rewards",
+  through: "persons_has_rewards",
 });
-Person.hasMany(Rewards, {
-  throught: "persons_has_rewards",
+Person.belongsToMany(Rewards, {
+  through: "persons_has_rewards",
 });
 
 

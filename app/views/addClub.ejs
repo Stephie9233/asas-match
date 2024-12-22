@@ -1,0 +1,12 @@
+<%- include('partial/header') %>
+<main class="body__main">
+    <h2 class="body__main--title-club">Nom du club</h2>
+    <form action="/clubs" method="post" class="body__main--form">
+        <article class="body__main--form-section">
+            <label for="club_name" class="body__main--form-section-label">Nom du club : </label>
+            <input type="text" name="club_name" id="club_name" class="body__main--form-section-input">
+            <button type="submit" class="body__main--form-section-btn">Enregistrer</button>
+        </article>
+    </form>
+</main>
+<footer class="body__footer"></footer>

@@ -1,0 +1,21 @@
+<%- include('partial/header') %>
+<main class="body__main">
+    <a href="/ajouter">
+        <p class="body__main--add" id="add">+</p>
+    </a>
+    <h2 class="body__main--title">Les clubs</h2>
+    <h3 class="body__main--noClub"><% if (clubs.length == 0) { %>
+     Aucun club n'a été ajouté
+    <% } %></h3>
+    <section class="body__main--ctn">
+        <% if (clubs.length > 0) { %>
+         <% for( const club of clubs ) { %>
+            <a href="/club/<%= club.id %>" class="body__main--ctn-link">
+                <article class="body__main--ctn-card">
+                    <h4 class="body__main--ctn-card-club" id="<%= club.club_name.toLowerCase() %>"><%= club.club_name %></h4>
+                </article>
+            </a>
+         <% } %>
+        <% } %>
+    </section>
+</main>

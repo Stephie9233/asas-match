@@ -1,0 +1,122 @@
+.body__main--form {
+    width: 95%;
+    margin: 1rem auto;
+    padding: .5rem;
+    border: 1px solid var(--green);
+    border-radius: 5px;
+}
+
+.body__main--title-add {
+    width: 90%;
+    margin-left: .5rem;
+    font-family: var(--text);
+    font-size: 1rem;
+    color: var(--green);
+    margin-bottom: 2.5rem;
+    display: flex;
+    justify-content: space-between;
+}
+
+.body__main--title-add-icon {
+    width: 1.2rem;
+    height: 1.2rem;
+    font-size: 1.5rem;
+    font-weight: 900;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--green);
+    border-radius: 5px;
+    color: white;
+    margin: 0;
+    padding-bottom: .25rem;
+}
+
+.body__main--form-section {
+    width: 95%;
+    height: fit-content;
+    padding: .5rem .2rem;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.body__main--form-section-subSection {
+    width: 45%;
+    height: 2rem;
+}
+
+.body__main--form-section-subSection-label {
+    width: 90%;
+    font-family: var(--text);
+    font-size: .8rem;
+    margin-bottom: .2rem;
+    text-align: center;
+}
+
+.body__main--form-section-subSection-input {
+    width: 90%;
+}
+
+.body__main--form-section-subSection-btn {
+    width: 45%;
+    height: 1.8rem;
+    background-color: var(--green);
+    color: white;
+    margin-top: .35rem;
+}
+
+.body__main--section {
+    width: 95%;
+    margin: .5rem auto 2rem auto;
+}
+
+.body__main--section-title {
+    width: 60%;
+    height: 1.5rem;
+    background-color: var(--green);
+    color: white;
+    text-transform: uppercase;
+    padding: 0 1rem;
+    font-family: var(--subtitle);
+    font-size: .9rem;
+    margin-bottom: 1.5rem;
+}
+
+.body__main--section-table {
+    width: 100%;
+    margin: .5rem auto 1.5rem auto;
+}
+
+.body__main--section-table-head, .body__main--section-table-body {
+    background-color: var(--green);
+    color: white;
+    height: 1.5rem;
+}
+
+.body__main--section-table-body {
+    background-color: white;
+    color: var(--green);
+    height: 1.2rem;
+}
+
+.body__main--section-table-head-column, .body__main--section-table-body-row-column {
+    width: 25%;
+    text-align: center;
+    font-family: var(--text);
+    font-size: .8rem;
+    font-weight: 500;    
+}
+
+.body__main--section-table-body-row {
+    border-bottom: 2px solid var(--green);
+}
+
+.body__main--section-table-head-column-icon {
+    width: 10%;
+    background-color: white;
+}
+
+.body__main--section-table-head-column-icon-img, .body__main--section-table-body-column-icon-img {
+    width: 1.2rem;
+}

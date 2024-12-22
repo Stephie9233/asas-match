@@ -6,7 +6,7 @@ export class Person extends Model {}
 Person.init(
   {
     rule: {
-      type: DataTypes.VARCHAR(50),
+      type: DataTypes.TEXT,
       allowNull: false,
     },
     shirt: {
@@ -18,12 +18,19 @@ Person.init(
       allowNull: false,
     },
     lastname: {
-      type: DataTypes.VARCHAR(100),
+      type: DataTypes.TEXT,
       allowNull: false,
     },
     firstname: {
-      type: DataTypes.VARCHAR(100),
+      type: DataTypes.TEXT,
       allowNull: false,
+    },
+    club_id: { // Vérifiez si le nom ici correspond à votre base
+      type: DataTypes.INTEGER,
+      references: {
+        model: 'clubs', // Nom de la table de référence
+        key: 'id',
+      },
     },
   },
   {
