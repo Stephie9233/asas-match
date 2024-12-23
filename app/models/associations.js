@@ -14,14 +14,14 @@ Person.belongsTo(Club, {foreignKey: "club_id"});
 //One to One
 // 1 person => has one details
 // 1 details => belongs to 1 person
-Person.hasOne(Details);
-Details.belongsTo(Person);
+Person.hasOne(Details, {foreignKey: "person_id"});
+Details.belongsTo(Person, {foreignKey: "person_id"});
 
 //One to many
 // 1 Details => has many experiences
 // Many Experiences => belongs to 1 Details
-Details.hasMany(Experience);
-Experience.belongsTo(Details);
+Details.hasMany(Experience, {foreignKey: "details_id"});
+Experience.belongsTo(Details, {foreignKey: "details_id"});
 
 //Many to many
 // Many Persons => has many rewards

@@ -11,6 +11,7 @@ CREATE TABLE "clubs" (
 DROP TABLE IF EXISTS "persons";
 CREATE TABLE "persons" (
    "id" SERIAL PRIMARY KEY,
+   "picture" TEXT,
    "rule" VARCHAR(50) NOT NULL,
    "shirt" VARCHAR,
    "poste" VARCHAR NOT NULL,
@@ -25,9 +26,9 @@ CREATE TABLE "persons" (
 
 DROP TABLE IF EXISTS "details";
 CREATE TABLE "details" (
-   "id" SERIAL PRIMARY KEY,
-   "heigth" INT CHECK ("heigth" > 0),
-   "birthdate" DATE,
+   "id" SERIAL PRIMARY KEY,   
+   "height" INT,
+   "birthdate" TEXT,
    "description" TEXT,
    "person_id" INT NOT NULL,
    "created_at" TIMESTAMPTZ NOT NULL DEFAULT CURRENT_TIMESTAMP,

@@ -1,0 +1,69 @@
+<%- include('partial/header') %>
+
+<main class="body__main">
+    <section class="body__main--general">  
+        <p class="body__main--section-add">+</p>      
+        <img src="<%= person.picture %>" alt="Photo d'un avatar" class="body__main--general-img">        
+        <article class="body__main--general-identity">
+            <h2 class="body__main--title"><%= person.firstname %> <%= person.lastname %> </h2>
+            <p class="body__main--label">Taille : 
+                <% if (!details) { %>
+                    <span class="body__main--section-xp-none">NC</span>
+                <% } else { %>
+                    <%= person.height %>
+                <% } %>                
+            </p>
+            <p class="body__main--label">Née le : 
+                <% if (!details) { %>
+                    <span class="body__main--section-xp-none">NC</span>
+                <% } else { %>
+                    <%= person.birthdate %>
+                <% } %>
+            </p>
+            <h4 class="body__main--general-poste">Poste <%= person.poste %></h4>
+        </article>
+    </section>
+    <section class="body__main--history">
+        <h3 class="body__main--section-title">Carrière :</h3>
+        <p class="body__main--section-add">+</p>
+        <article class="body__main--section-xp">
+            <% if (!history) { %>
+                <h4 class="body__main--section-xp-none">Non renseignée</h4>
+            <% } else { %>
+                <% for(const story of history) { %>
+                    <article class="body__main--section-xp-ctn">
+                        <p class="body__main--section-xp-ctn-season"><%= story.season_begin %> <%= story.season_begin+1 %></p>
+                        <p class="body__main--section-xp-club"><% story.club %></p>
+                        <p class="body__main--section-xp-level"><%= story.level %></p>
+                    </article>
+                <% } %>
+            <% } %>
+            <article class="body__main--section-xp-description">
+                <h4 class="body__main--section-subtitle">Description :</h4>
+                <p class="body__main--section-add">+</p>
+                <% if (!details) { %>
+                 
+                <% } else { %>
+                    <p class="body__main--section-xp-description-content"><%= details.description %></p>
+                <% } %>
+            </article>            
+        </article>
+    </section>
+    <section class="body__main--section-rewards">
+        <h3 class="body__main--section-rewards-title">Titres :</h3>
+        <p class="body__main--section-add">+</p>
+        <% if(!rewards) { %> 
+            <h4 class="body__main--section-reward-none">Non renseignés</h4>
+        <% } else { %>
+            <% for(const reward of rewards) { %>
+                <article class="body__main--section-xp-ctn"> 
+                    <p>>%= reward.season_begin %></p>
+                </article>
+            <% } %>
+        <% } %> 
+    </section>
+
+    <a href="/club/<%= person.club_id %>" class="body__main--btn"><p class="body__main--btn-txt">Retour</p></a>
+</main>
+
+<footer class="body__footer"></footer>

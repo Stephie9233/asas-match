@@ -71,13 +71,19 @@
                                 <%= player.lastname %>
                             </td>
                             <td class="body__main--section-table-row-icon">
-                                <img src="/img/read.png" alt="icone lire" class="body__main--section-table-body-column-icon-img">
+                                <a href="/membre/<%= player.id %>">
+                                    <img src="/img/read.png" alt="icone lire" class="body__main--section-table-body-column-icon-img">
+                                </a>
                             </td>
                             <td class="body__main--section-table-row-icon">
-                                <img src="/img/stylo.png" alt="icone stylo" class="body__main--section-table-body-column-icon-img">
+                                <a href="/club/<%= club.id %>/membre/<%= player.id %>/éditer">
+                                    <img src="/img/stylo.png" alt="icone stylo" class="body__main--section-table-body-column-icon-img">
+                                </a>
                             </td>
                             <td class="body__main--section-table-row-icon">
-                                <img src="/img/poubelle.png" alt="icone poubelle" class="body__main--section-table-body-column-icon-img">
+                                <a href="/club/<%= club.id %>/membre/<%= player.id %>/supprimer">    
+                                    <img src="/img/poubelle.png" alt="icone poubelle" class="body__main--section-table-body-column-icon-img">
+                                </a>
                             </td>
                         </tr>
                     <% } %>                
@@ -118,17 +124,17 @@
                             <%= employee.lastname %>
                         </td>
                         <td class="body__main--section-table-row-icon">
-                            <a href="">
+                            <a href="/membre/<%= employee.id %>">
                                 <img src="/img/read.png" alt="icone lire" class="body__main--section-table-body-column-icon-img">
                             </a>
                         </td>
                         <td class="body__main--section-table-row-icon">
-                            <a href="">
+                            <a href="/membre/<%= employee.id %>/modifier">
                                 <img src="/img/stylo.png" alt="icone stylo" class="body__main--section-table-body-column-icon-img">
                             </a>
                         </td>
                         <td class="body__main--section-table-row-icon">
-                            <a href="">
+                            <a href="/membre/<%= employee.id %>/supprimer">
                                 <img src="/img/poubelle.png" alt="icone poubelle" class="body__main--section-table-body-column-icon-img">
                             </a>
                         </td>
@@ -139,6 +145,7 @@
         </table>
         <% } %>
     </section>
+    <a href="/clubs" class="body__main--btn"><p class="body__main--btn-txt">Retour</p></a>
 </main>
 
 

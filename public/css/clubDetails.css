@@ -120,3 +120,21 @@
 .body__main--section-table-head-column-icon-img, .body__main--section-table-body-column-icon-img {
     width: 1.2rem;
 }
+
+.body__main--btn-txt {
+    width: 6rem;
+    margin-left: 30%;
+    margin-top: 2rem;
+    height: 2.5rem;
+    background-color: var(--red);
+    border-radius: 5px;
+    border: 1px solid var(--green);
+    color: white;
+    font-family: var(--text);
+    font-size: 1.2rem;
+    font-weight: 700;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}

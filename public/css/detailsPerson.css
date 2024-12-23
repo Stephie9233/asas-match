@@ -1,0 +1,196 @@
+.body__main--general {
+    width: 95%;
+    height: 30%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+    position: relative;
+}
+
+.body__main--general-img {
+    width: 40%;
+    margin-right: .5rem;
+}
+
+.body__main--general-identity {
+    width: 60%;
+    padding: .5rem 0;
+    position: relative;
+}
+
+.body__main--title {
+    font-family: var(--subtitle);
+    font-size: 1rem;
+    width: 80%;
+    
+}
+
+.body__main--label {
+    width: 100%;
+    color: var(--green);
+    font-family: var(--text);
+    font-size: .9rem;
+    font-weight: 700;
+    padding: .1rem;
+}
+
+.body__main--label:last-child {
+    margin-bottom: .5rem;
+}
+
+.body__main--label-data {
+    color: var(--red);
+    font-family: var(--text);
+    font-size: .8rem;
+    font-weight: 500;
+}
+
+.body__main--general-poste {
+    height: 2.5rem;
+    background-color: var(--green);
+    color: white;
+    margin-top: .5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: var(--title);
+    font-size: 1.5rem;
+}
+
+.body__main--history {
+    width: 95%;
+    height: fit-content;
+    padding: .5rem .2rem;
+    position: relative;
+}
+
+.body__main--section-add {
+    width: 1.5rem;
+    height: 1.5rem;
+    background-color: var(--green);
+    border-radius: 5px;
+    color: white;
+    font-size: 1.5rem;
+    font-weight: 900;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: .7rem;
+    left: 90%;
+}
+
+.body__main--label-add-small {
+    width: 1rem;
+    height: 1rem;
+    font-size: .5rem;
+}
+
+.body__main--section-title {
+    width: 60%;
+    height: 2rem;
+    color: white;
+    background-color: var(--green);
+    font-family: var(--subtitle);
+    font-size: 1.2rem;
+    padding-left: .8rem;
+}
+
+.body__main--section-xp-description .body__main--section-add {
+    margin-left: 1rem;
+}
+
+.body__main--section-rewards-title {
+    width: 60%;
+    height: 2rem;
+    color: white;
+    background-color: var(--green);
+    font-family: var(--subtitle);
+    font-size: 1.2rem;
+    padding-left: .8rem;
+    margin-left: -8rem;
+    margin-bottom: 1rem;
+}
+
+.body__main--section-xp, .body__main--section-rewards {
+    width: 90%;
+    margin: .5rem auto;
+    min-height: 3rem;
+    padding: .2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.body__main--section-xp-none, .body__main--section-reward-none {
+    color: var(--red);
+    font-family: var(--subtitle);
+    font-size: .9rem;
+    text-align: center;
+    width: 90%;
+    height: 2rem;
+    margin-top: 1rem;
+}
+
+.body__main--section-subtitle {
+    height: fit-content;
+    width: 60%;
+    color: var(--green);
+    font-family: var(--subtitle);
+    font-size: 1.2rem;
+    padding-left: .8rem;
+    margin-left: -1.5rem;
+}
+
+.body__main--section-xp-ctn {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    width: 100%;
+    height: 2.5rem;
+}
+
+.body__main--section-xp-ctn-season {
+    width: 20%;
+}
+
+.body__main--section-xp-ctn-club, .body__main--section-xp-ctn-level {
+    width: 40%;
+    padding-left: .5rem;
+}
+
+.body__main--section-xp-description {
+    width: 100%;
+    min-height: 3rem;
+    padding: .5rem .2rem;
+    position: relative;
+}
+
+.body__main--section-xp-description-content {
+    width: 90%;
+    min-height: 3rem;
+}
+
+.body__main--section-rewards {
+    position: relative;
+}
+
+.body__main--btn-txt {
+    width: 6rem;
+    margin-left: 30%;
+    margin-top: 2rem;
+    height: 2.5rem;
+    background-color: var(--red);
+    border-radius: 5px;
+    border: 1px solid var(--green);
+    color: white;
+    font-family: var(--text);
+    font-size: 1.2rem;
+    font-weight: 700;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}

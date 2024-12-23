@@ -7,3 +7,4 @@ document
   .addEventListener("click", () => {
     document.querySelector(".body__main--form").style.display = "block";
   });
+

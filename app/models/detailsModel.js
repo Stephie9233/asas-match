@@ -5,7 +5,7 @@ export class Details extends Model {}
 
 Details.init(
   {
-    heigth: {
+    height: {
       type: DataTypes.INTEGER,
       allowNull: true,
     },

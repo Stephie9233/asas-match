@@ -5,6 +5,11 @@ export class Person extends Model {}
 
 Person.init(
   {
+    picture: {
+      type: DataTypes.TEXT,
+      allowNull: true,
+      defaultValue: "/img/avatar.png",
+    },
     rule: {
       type: DataTypes.TEXT,
       allowNull: false,

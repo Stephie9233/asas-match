@@ -5,6 +5,8 @@ import { Router } from "express";
 import { mainController } from "./controllers/mainController.js";
 import { adminHomeController } from "./controllers/adminHomeController.js";
 import { adminClubsController } from "./controllers/adminClubsController.js";
+import { adminPersonsController } from "./controllers/adminPersonsController.js";
+
 // Création d'un router
 export const router = Router();
 
@@ -21,3 +23,4 @@ router.get("/ajouter", adminClubsController.addClub);
 router.post("/clubs", adminClubsController.verifyDatas);
 router.get("/club/:id", adminClubsController.getDetails);
 router.post("/club/:id/membre/ajouter", adminClubsController.addMember);
+router.get("/membre/:id", adminPersonsController.getDetails);
