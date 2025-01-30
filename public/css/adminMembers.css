@@ -1,0 +1,170 @@
+.body__main--title-actions {
+    width: 95%;
+    height: 4rem;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.body__main--title-actions-form {
+    width: 100%;
+    height: fit-content;
+    display: flex;
+}
+
+.body__main--title-actions-form-div {
+    width: 40%;
+    margin-right: 2.5%;
+    margin-bottom: 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.body__main--title-actions-form-div-label {
+    width: 80%;
+    text-align: center;
+    font-size: .9rem;
+    color: var(--green);
+    font-weight: 700;
+}
+
+.body__main--title-actions-form-div-input {
+    width: 80%;
+    height: 1.2rem;
+    border: 1px solid var(--green);
+    border-radius: 5px;
+    padding: .2rem;    
+}
+
+.body__main--title-actions-form-div-btn {
+    font-size: .7rem;
+    color: white;
+    background-color: var(--green);
+    padding: .2rem;
+    height: 2.2rem;
+}
+
+.body__main--noMatch {
+    text-align: center;
+    font-family: var(--text);
+    font-size: 1.2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;    
+}
+
+.body__main--noMatch-add {
+    width: 40%;
+    margin: 1.5rem auto;
+    text-decoration: none;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.body__main--noMatch-add-icon {
+    width: 30%;
+    padding: 2.5%;
+    background-color: var(--green);
+    border-radius: 5px;
+    color: white;
+    font-size: 1.5rem;
+    font-weight: 900;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+.body__main--noMatch-add-label {
+    width: 70%;
+    border-radius: 5px;
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: var(--green);
+    text-align: left;
+    margin-left: .5rem;
+}
+
+.body__main--ctn {
+    width: 90%;
+    height: fit-content;
+    margin: 0 auto .5rem auto;
+    overflow-y: auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto;
+    gap: .5rem;
+    padding: 1rem 5%;
+}
+
+.body__main--ctn-link {
+    text-decoration: none;
+}
+
+.body__main--ctn-card {
+    width: 7rem;
+    height: 7rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid var(--green);
+    border-radius: 5px;
+    text-align: center;    
+}
+
+.body__main--ctn-card:hover {
+    background-color: var(--green);
+    color: #f1f1f1;
+}
+
+.body__main--ctn-card:hover .body__main--ctn-card-club {
+    color: #f1f1f1;
+}
+
+.body__main--ctn-card-member {
+    font-family: var(--text);
+    font-size: 1rem;
+    text-transform: uppercase;
+    color: var(--red);    
+}
+
+.body__main--text {
+    width: 95%;
+    margin: 1rem auto;
+    font-size: .8rem;
+}
+
+.body__main--btns {
+    width: 80%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    margin: 1rem auto;
+}
+
+.body__main--btns-add, .body__main--noMatch-add {
+    text-decoration: none;
+    cursor: pointer;
+    padding: .5rem;
+    background-color: var(--green);
+    color: white;
+    font-size: 1rem;
+}
+
+.body__main--btns-back {
+    text-decoration: none;
+    cursor: pointer;
+    padding: .5rem;
+    background-color: var(--red);
+    color: white;
+    font-size: 1rem;
+}
+
+
+
+

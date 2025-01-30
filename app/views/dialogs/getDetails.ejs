@@ -1,0 +1,24 @@
+<dialog class="body__dialog--update">
+    <section class="body__dialog--update-ctn">
+        <article class="body__dialog--update-general">
+            <p class="body__dialog--update-general-firstname"> Prénom : <%= person.firstname %>,</p>
+            <p class="body__dialog--update-general-firstname"> Nom : <%= person.lastname %> <%= person.lastname %>,</p>
+            <p class="body__dialog--update-general-height"> taille : <%= person.height %>,</p>
+            <p class="body__dialog--update-general-birthdate"> Né(e) le : <%= person.height %>,</p>
+            <p class="body__dialog--update-general-poste"> Poste : <%= person.poste %>,</p>
+        </article>
+
+        <article class="body__dialog--update-histories">
+            <p class="body__dialog--update-general-season"> Saison : <%= history.season_begin %>,</p>
+            <p class="body__dialog--update-general-club"> Club : <%= history.club %>,</p>
+            <p class="body__dialog--update-general-description"> Description : <%= details.description %>,</p>
+        </article>
+
+        <article class="body__dialog--update-rewards">
+            <p class="body__dialog--update-general-reward"> Saison : <%= reward.season_begin %>,</p>
+            <p class="body__dialog--update-general-description"> Description : <%= reward.reward %>,</p>
+            <p class="body__dialog--update-general-championship"> Championnat : <%= reward.championship %>,</p>
+            
+        </article>
+    </section>
+</dialog>

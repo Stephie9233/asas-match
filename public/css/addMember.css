@@ -1,0 +1,167 @@
+.body__main--title {
+    font-size: 1.5rem;
+}
+
+.body__main--steps {
+    width: 80%;
+    height: 1px;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: end;
+    position: relative;
+    bottom: .2rem;
+    margin-top: 2.5rem;
+    margin-left: 10%;
+    border-bottom: 1px solid var(--green);
+}
+
+.body__main--steps-step {
+    width: 1.2rem;
+    height: 1.2rem;
+    position: absolute;
+    top: -.6rem;
+    border: 1px solid var(--red);
+    background-color: white;
+}
+
+.body__main--steps-step h3 {
+    margin-top: -1rem;
+    margin-left: -.5rem;
+    margin-bottom: .3rem;
+    color: var(--green);
+    font-family: var(--subtitle);
+}
+
+#one, #two {
+    left: 1.5rem;
+}
+
+#two {
+    left: 45%;
+}
+
+#three {
+    right: 1.5rem;
+}
+
+#three h3 {
+    margin-left: -.3rem;
+}
+
+
+.body__main--section-title {
+    width: 60%;
+    height: 2rem;
+    color: white;
+    background-color: var(--green);
+    font-family: var(--subtitle);
+    font-size: 1.2rem;
+    padding-left: .8rem;
+    margin: 1.5rem 0 1.2rem 0;
+}
+
+.body__main--section-add {
+    font-size: 1.5rem;
+    font-weight: 900;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--green);
+    border-radius: 5px;
+    color: white;
+    margin: 0;
+    padding: .2rem .3rem;
+    width: fit-content;
+    height: fit-content;
+}
+
+.body__main--form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.body__main--form-section {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    margin-bottom: .5rem;
+}
+
+.body__main--form-div {
+    width: 45%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.body__main--form-div-label {
+    text-align: center;
+    color: var(--green);
+    font-size: .8rem;
+    margin-bottom: .2rem;
+    font-family: var(--subtitle);
+}
+
+.body__main--form-div-input {
+    width: 80%;
+    margin-bottom: .6rem;
+    padding: .2rem;
+    color: var(--red);
+}
+
+#rule, #picture {
+    font-size: .7rem;
+    width: 170%;
+    padding: .2rem;
+}
+
+#picture {
+    padding: .2rem;
+    font-size: .8rem;
+}
+
+.body__main--section-table {
+    width: 95%;
+    margin: .5rem 2.5%;
+}
+
+.body__main--section-table-head {
+    background-color: var(--green);
+    color: white;
+    font-family: var(--subtitle);
+    text-align: center;    
+}
+
+.body__main--section-table-head-d {
+    padding: .2rem 0;
+    font-size: .8rem;
+    width: 33%;
+}
+
+.body__main--form-btns {
+    width: 80%;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.body__main--form-submit, .body__main--btn-back {
+    padding: .5rem;
+    background-color: var(--green);
+    color: white;
+    font-weight: 700;
+    margin-bottom: 1rem;
+}
+
+.body__main--btn-back {
+    background-color: var(--red);
+    font-size: .9rem;
+}
+
+#description {
+    width: 200%;
+    min-height: 4rem;
+}
+

@@ -14,6 +14,7 @@ app.set("views", "./app/views"); // => pour préciser à EJS dans quel dossier t
 app.use(express.static("./public"));
 
 app.use(express.urlencoded({ extended: true }));
+app.use(express.json());
 
 // Configurer l'application
 app.use(router);

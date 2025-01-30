@@ -5,7 +5,7 @@ CREATE TABLE "clubs" (
    "id" SERIAL PRIMARY KEY,
    "club_name" VARCHAR(50) NOT NULL UNIQUE, 
    "created_at" TIMESTAMPTZ NOT NULL DEFAULT CURRENT_TIMESTAMP,
-   "updated_at" TIMESTAMPTZ DEFAULT CURRENT_TIMESTAMP
+451171   "updated_at" TIMESTAMPTZ DEFAULT CURRENT_TIMESTAMP
 );
 
 DROP TABLE IF EXISTS "persons";
@@ -17,7 +17,7 @@ CREATE TABLE "persons" (
    "poste" VARCHAR NOT NULL,
    "lastname" VARCHAR(50) NOT NULL,
    "firstname" VARCHAR(50) NOT NULL,
-   "club_id" INT NOT NULL,
+   "club_id" INT,   
    "created_at" TIMESTAMPTZ NOT NULL DEFAULT CURRENT_TIMESTAMP,
    "updated_at" TIMESTAMPTZ DEFAULT CURRENT_TIMESTAMP,
 
@@ -35,7 +35,7 @@ CREATE TABLE "details" (
    "updated_at" TIMESTAMPTZ DEFAULT CURRENT_TIMESTAMP,
 
    FOREIGN KEY ("person_id") REFERENCES "persons"("id") ON DELETE CASCADE
-);
+);4
 
 DROP TABLE IF EXISTS "experiences";
 CREATE TABLE "experiences" (

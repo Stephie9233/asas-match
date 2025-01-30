@@ -56,26 +56,6 @@ export const adminClubsController = {
     
 
     res.render("clubDetails", { club, players, staff, css });
-  },
-
-  async addMember(req, res) {
-    const id = req.params.id;
-    console.log(id);
-    const {rule} = req.body;
-    const {shirt} = req.body;
-    const {poste} = req.body;
-    const {firstname} = req.body;
-    const {lastname} = req.body;
-    const person = await Person.findOne({where: {club_id: id, firstname: firstname, lastname: lastname}});
-    console.log(person);
-    if (!person) {
-      const newPerson = new Person({ rule: rule, shirt: shirt, poste: poste, firstname: firstname, lastname: lastname, club_id: id });
-      newPerson.save();
-      res.redirect(`/club/${id}`);
-    } else {
-      console.log("Ce membre existe !");
-      return;
-    }
-    
   }
+
 };

@@ -1,0 +1,37 @@
+<%- include('partial/header') %>
+<main class="body__main">
+    <h2 class="body__main--title">Les Membres</h2>
+    <section class="body__main--title-actions">
+        <form action="/membre/search" method="get" class="body__main--title-actions-form">
+            <article class="body__main--title-actions-form-div">
+                <label for="firstname" class="body__main--title-actions-form-div-label">Prénom :</label>
+                <input type="text" name="firstname" id="firstname" class="body__main--title-actions-form-div-input">
+            </article>
+            <article class="body__main--title-actions-form-div">
+                <label for="lastname" class="body__main--title-actions-form-div-label">Nom :</label>
+                <input type="text" name="lastname" id="lastname" class="body__main--title-actions-form-div-input">
+            </article>
+            <input type="submit" class="body__main--title-actions-form-div-btn" value="Rechercher">
+        </form>
+    </section>
+    
+    <h3 class="body__main--noMatch"><% if (members.length == 0) { %>
+     Aucun membre ne correspond
+    <% } %></h3>
+    <section class="body__main--ctn">
+        <% if (members.length > 0) { %>
+         <% for( const member of members ) { %>
+            <a href="/membre/<%= member.id %>" class="body__main--ctn-link">
+                <article class="body__main--ctn-card">
+                    <h4 class="body__main--ctn-card-member" id="<%= member.id %>"><%= member.firstname %> <%= member.lastname %> </h4>
+                </article>
+            </a>
+         <% } %>
+        <% } %>
+    </section>
+    <p class="body__main--text">Vous ne trouvez pas la personne que vous cherchez ?</p>
+    <section class="body__main--btns">
+        <a href="/membre/ajouter" class="body__main--btns-add">Ajouter</a>
+        <a href="/admin" class="body__main--btns-back">Retour</a>
+    </section>
+</main>

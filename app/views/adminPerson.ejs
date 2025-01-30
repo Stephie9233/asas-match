@@ -1,69 +1,137 @@
 <%- include('partial/header') %>
 
 <main class="body__main">
-    <section class="body__main--general">  
-        <p class="body__main--section-add">+</p>      
-        <img src="<%= person.picture %>" alt="Photo d'un avatar" class="body__main--general-img">        
+    <h2 class="body__main--title">Ajouter un membre</h2>
+    <div class="body__main--steps">
+        <div class="body__main--steps-step" id="one">
+            <h3>Identité</h3>
+        </div>
+        <div class="body__main--steps-step" id="two">
+            <h3>Carrière</h3>
+        </div>
+        <div class="body__main--steps-step" id="three">
+            <h3>Titres</h3>
+        </div>
+    </div>
+    <section class="body__main--section" id="general">       
         <article class="body__main--general-identity">
-            <h2 class="body__main--title"><%= person.firstname %> <%= person.lastname %> </h2>
-            <p class="body__main--label">Taille : 
-                <% if (!details) { %>
-                    <span class="body__main--section-xp-none">NC</span>
-                <% } else { %>
-                    <%= person.height %>
-                <% } %>                
-            </p>
-            <p class="body__main--label">Née le : 
-                <% if (!details) { %>
-                    <span class="body__main--section-xp-none">NC</span>
-                <% } else { %>
-                    <%= person.birthdate %>
-                <% } %>
-            </p>
-            <h4 class="body__main--general-poste">Poste <%= person.poste %></h4>
-        </article>
+            <h2 class="body__main--section-title">Identité</h2>
+            <form action="/membre/add" method="post" class="body__main--form">
+                <section class="body__main--form-section">
+                    <article class="body__main--form-div">
+                        <label for="firstname" class="body__main--form-div-label">Prénom : </label>
+                        <input type="text" name="firstname" id="firstname" class="body__main--form-div-input">
+                    </article>
+                    <article class="body__main--form-div">
+                        <label for="lastname" class="body__main--form-div-label">Nom : </label>
+                        <input type="text" name="lastname" id="lastname" class="body__main--form-div-input">
+                    </article>
+                </section>
+                <section class="body__main--form-section">
+                    <article class="body__main--form-div">
+                        <label for="birthdate" class="body__main--form-div-label">Date de naissance : </label>
+                        <input type="date" name="birthdate" id="birthdate" class="body__main--form-div-input">
+                    </article>
+                    <article class="body__main--form-div">
+                        <label for="height" class="body__main--form-div-label">Taille (en cm): </label>
+                        <input type="number" name="height" id="height" class="body__main--form-div-input">
+                    </article>
+                </section>
+                <section class="body__main--form-section">
+                    <article class="body__main--form-div">
+                        <label for="rule" class="body__main--form-div-label">Fonction : </label>
+                        <input type="text" name="rule" id="rule" class="body__main--form-div-input">
+                    </article>
+                </section>
+                <section class="body__main--form-section">             
+                    <article class="body__main--form-div">
+                        <label for="picture" class="body__main--form-div-label">Photo : </label>
+                        <input type="file" name="picture" id="picture" placeholder="Fichier" class="body__main--form-div-input">
+                    </article>
+                </section>
+                <section class="body__main--form-btns">
+                    <input type="submit" value="Enregistrer" class="body__main--form-submit">
+                    <a href="/membres" class="body__main--btn"><p class="body__main--btn-back">Retour</p></a>
+                </section>                
+            </form>
     </section>
-    <section class="body__main--history">
+    <section class="body__main--section" id="history">
         <h3 class="body__main--section-title">Carrière :</h3>
+        <table class="body__main--section-table">
+            <thead class="body__main--section-table-head">
+                <tr class="body__main--section-table-head-row">
+                    <td class="body__main--section-table-head-d">Saison</td>
+                    <td class="body__main--section-table-head-d">Championnat</td>
+                    <td class="body__main--section-table-head-d">Club</td>
+                </tr>
+            </thead>
+            <tbody class="body__main--section-table-body">
+
+            </tbody>
+        </table>
         <p class="body__main--section-add">+</p>
         <article class="body__main--section-xp">
-            <% if (!history) { %>
-                <h4 class="body__main--section-xp-none">Non renseignée</h4>
-            <% } else { %>
-                <% for(const story of history) { %>
-                    <article class="body__main--section-xp-ctn">
-                        <p class="body__main--section-xp-ctn-season"><%= story.season_begin %> <%= story.season_begin+1 %></p>
-                        <p class="body__main--section-xp-club"><% story.club %></p>
-                        <p class="body__main--section-xp-level"><%= story.level %></p>
+            <form action="" method="post" class="body__main--form">
+                <section class="body__main--form-section">
+                    <article class="body__main--form-div">
+                        <label for="season" class="body__main--form-div-label">Saison : </label>
+                        <input type="num" name="season" id="season" class="body__main--form-div-input">
                     </article>
-                <% } %>
-            <% } %>
-            <article class="body__main--section-xp-description">
-                <h4 class="body__main--section-subtitle">Description :</h4>
-                <p class="body__main--section-add">+</p>
-                <% if (!details) { %>
-                 
-                <% } else { %>
-                    <p class="body__main--section-xp-description-content"><%= details.description %></p>
-                <% } %>
-            </article>            
+                    <article class="body__main--form-div">
+                        <label for="club" class="body__main--form-div-label">Club : </label>
+                        <input type="num" name="club" id="club" class="body__main--form-div-input">
+                    </article>
+                    <article class="body__main--form-div">
+                        <label for="level" class="body__main--form-div-label">Championnat : </label>
+                        <input type="text" name="level" id="level" class="body__main--form-div-input">
+                    </article>
+                </section>
+                <input type="submit" value="Enregistrer" class="body__main--form-submit">
+            </form>
+                
+            <form action="" method="post" class="body__main--form">   
+                <article class="body__main--form-div">
+                    <label for="description" class="body__main--form-div-label">Description : </label>
+                    <input type="textarea" name="description" id="description" class="body__main--form-div-input">
+                </article>
+                <input type="submit" value="Enregistrer" class="body__main--form-submit">
+            </form>
         </article>
     </section>
-    <section class="body__main--section-rewards">
-        <h3 class="body__main--section-rewards-title">Titres :</h3>
-        <p class="body__main--section-add">+</p>
-        <% if(!rewards) { %> 
-            <h4 class="body__main--section-reward-none">Non renseignés</h4>
-        <% } else { %>
-            <% for(const reward of rewards) { %>
-                <article class="body__main--section-xp-ctn"> 
-                    <p>>%= reward.season_begin %></p>
-                </article>
-            <% } %>
-        <% } %> 
-    </section>
+    <section class="body__main--section" id="rewards">
+        <h3 class="body__main--section-title">Titres :</h3>
+        <table class="body__main--section-table">
+            <thead class="body__main--section-table-head">
+                <tr class="body__main--section-table-head-row">
+                    <td class="body__main--section-table-head-d">Saison</td>
+                    <td class="body__main--section-table-head-d">Championnat</td>
+                    <td class="body__main--section-table-head-d">Club</td>
+                </tr>
+            </thead>
+            <tbody class="body__main--section-table-body">
 
-    <a href="/club/<%= person.club_id %>" class="body__main--btn"><p class="body__main--btn-txt">Retour</p></a>
+            </tbody>
+        </table>
+        <p class="body__main--section-add">+</p>
+        <form action="" method="post" class="body__main--form">
+            <section class="body__main--form-section">
+                <article class="body__main--form-div">
+                    <label for="season_begin" class="body__main--form-div-label">Saison : </label>
+                    <input type="num" name="season_begin" id="season_begin" class="body__main--form-div-input">
+                </article>
+                <article class="body__main--form-div">
+                    <label for="championship" class="body__main--form-div-label">Championnat : </label>
+                    <input type="num" name="championship" id="championship" class="body__main--form-div-input">
+                </article>
+                <article class="body__main--form-div">
+                    <label for="reward" class="body__main--form-div-label">Titre : </label>
+                    <input type="num" name="reward" id="reward" class="body__main--form-div-input">
+                </article>
+            </section>
+            <input type="submit" value="Enregistrer" class="body__main--form-submit">
+        </form>
+    </section>    
 </main>
 
 <footer class="body__footer"></footer>
+<script type="module" src="../js/person.js"></script>
